@@ -2,6 +2,20 @@ body{
     background-color: #232931;
     color: #eeeeee;
 }
-.bgc{
+img{
+    width: 100％;
+    height:200px;
+    object-fit: cover;
+}
+.bgc-A{
     background-color: #232931;
+}
+.bgc-B{
+    background-color: #393e46;
+}
+.bgc-C{
+    background-color: #4ecca3;
+}
+.bgc-D{
+    background-color: #eeeeee;
 }
