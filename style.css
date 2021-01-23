@@ -2,11 +2,6 @@ body{
     background-color: #232931;
     color: #eeeeee;
 }
-img{
-    width: 100％;
-    height:270px;
-    object-fit: cover;
-}
 a:link { color: #eeeeee; }
 a:visited { color: #eeeeee; }
 a:hover { color: #4ecca3; }
@@ -35,27 +30,3 @@ a:active { color:#4ecca3; }
 .tec-D{
     color: #eeeeee;
 }
-.trim-l{
-    position:relative;
-  }
-.trim-l:after{
-    position: absolute;
-    content:"";
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 40%, #393e46 100%); 
-  }
-.trim-r{
-    position:relative;
-  }
-.trim-r:after{
-    position: absolute;
-    content:"";
-    top:0;
-    left:0;
-    width: 100%;
-    height:100%;
-    background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 40%, #393e46 100%); 
-  }
