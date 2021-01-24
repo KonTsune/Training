@@ -1,0 +1,1 @@
+let training = ['Arm', 'Shoulder', 'Chest', 'Abs', 'Back', 'Leg']

@@ -83,9 +83,33 @@
       </a>
     </div>
     <main class="container">
-        <select class="form-control">
-          <option>Default select</option>
+      <form id = "form1">
+        <select class="form-control" id="yest">
+            <option>腕</option>
+            <option>肩</option>
+            <option>胸</option>
+            <option>腹筋</option>
+            <option>背中</option>
+            <option>脚</option>
         </select>
+        <input type="button" onclick="func1()" value="送信">
+        <div id="output_message"></div>
+        <div id="output"></div>
+        <script language="javascript" type="text/javascript">
+            function func1() {
+                let training = ['腕', '肩', '胸', '腹筋', '背中', '脚'];
+                let yest = document.getElementById("yest").value;
+                document.getElementById("output_message").innerHTML = "昨日行ったトレーニングは" + yest + "です。";
+                training.splice(training.indexOf(yest), 1);
+                console.log(yest);
+                console.log(training.indexOf(yest));
+                console.log(training)
+                let r = Math.floor(Math.random() * training.length);
+                r = "今日行うべきトレーニングは"+ training[r] + "です。";
+                document.getElementById("output").innerHTML = r;
+            }
+        </script>
+    </form>
     </main>
   </body>
 </html>
