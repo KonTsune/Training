@@ -115,11 +115,8 @@
                 <option>脚</option>
               </select>
               <br>
-              <button type="button" class="btn bgc-C" onclick="func1()" value="送信">送信</button>
-            </div>        
-            
-            <div id="output_message"></div>
-
+              <button type="button" class="btn bgc-C tec-D" onclick="func1()">今日のオススメトレーニング</button>
+            </div>
             <div class="row">
               <div class="card mb-3 rounded-0 border border-0" style="width: 100%;">
                 <div class="row no-gutters">
@@ -147,7 +144,6 @@
         function func1() {
           let training = ['選択しない', '腕', '肩', '胸', '腹筋', '背中', '脚'];
           let yest = document.getElementById("yest").value;
-          document.getElementById("output_message").innerHTML = "昨日行ったトレーニングは" + yest + "です。";
           if (yest == '選択しない') {
             training.splice(0, 1);
             console.log(yest);
