@@ -82,43 +82,66 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <main class="container bgc-B">
-      <div class="row">
-        <div class="col-md-12 blog-main">
-          <h1 class="font-italic">
+    <main class="container">
+      <div class="row bgc-B">
+        <div class="col-12">
+          <h1 class="font-italic" style="margin-top: 30px;">
             ルーレット
           </h1>
           <h4 class="pb-3 md-3 border-bottom">
             Roulette
           </h4>
-    
-          <div class="blog-post">
-            
+          <div>
             <p>このルーレットページでは、今日どこの部位をトレーニングすればいいのか迷っているそこのあなたに、今日やるべきトレーニングをお教えします。</p>
+            <br>
+            <h4>ルーレットの使い方</h4>
+            <ol>
+              <li>選択Formから昨日トレーニングを行った部位を選択します</li>
+              <li>ボタンを押します</li>
+              <li>今日行うトレーニングを自動で出力してます</li>
+            </ol>
+            <p>ぜひ日頃のトレーニングにお役立てください。</p>
             <hr color="#eeeeee">
-            <div class="form-row">
-              <form id = "form1">
-                <select class="form-control form-control-lg" id="yest"　placeholder=".form-control-lg">
-                  <option>選択しない</option>
-                  <option>腕</option>
-                  <option>肩</option>
-                  <option>胸</option>
-                  <option>腹筋</option>
-                  <option>背中</option>
-                  <option>脚</option>
-                </select>
-              </form>
-            </div>
-            <div class="row">
-              <input type="button" onclick="func1()" value="送信">
-            </div>
+            
+            <div class="form-group col-md-6">
+              <label for="inputState">昨日トレーニングを行った部位を選んでください</label>
+              <select class="form-control form-control-lg" id="yest">
+                <option>選択しない</option>
+                <option>腕</option>
+                <option>肩</option>
+                <option>胸</option>
+                <option>腹筋</option>
+                <option>背中</option>
+                <option>脚</option>
+              </select>
+              <br>
+              <button type="button" class="btn bgc-C" onclick="func1()" value="送信">送信</button>
+            </div>        
+            
             <div id="output_message"></div>
-            <div id="output"></div>
+
+            <div class="row">
+              <div class="card mb-3 rounded-0 border border-0" style="width: 100%;">
+                <div class="row no-gutters">
+                  <div class="col-md-5 bgc-B">
+                    <div class="card-body">
+                      <p>オススメの今日のトレーニング部位は</p>
+                      <h2 class="card-title tec-D" id="thnk"></h2>
+                      <div id="output"></div>
+                      <h5 class="card-title tec-D"></h5>
+                      <p class="card-text tec-D"></p>
+                      <a class="btn btn-block bgc-C tec-B" href="../html-04/Stretch/index.html" role="button">ストレッチについて知る</a>
+                    </div>
+                  </div>
+                  <div class="col-md-7 trim-r">
+                    <img src="C:\Users\昆\Documents\f18064_3\情報工学基礎実習Ⅱ\実習\面白画像\開脚 (4).jpg" alt="ダンベル" class="bd-placeholder-img bd-placeholder-img-lg d-block w-100">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-          
 
       <script language="javascript" type="text/javascript">
         function func1() {
@@ -128,19 +151,17 @@
           if (yest == '選択しない') {
             training.splice(0, 1);
             console.log(yest);
-            console.log(training.indexOf(yest));
             console.log(training)
           }
           else{
             training.splice(0, 1);
             training.splice(training.indexOf(yest), 1);
             console.log(yest);
-            console.log(training.indexOf(yest));
             console.log(training)
           }
           let r = Math.floor(Math.random() * training.length);
-          r = "今日行うべきトレーニングは"+ training[r] + "です。";
-          document.getElementById("output").innerHTML = r;
+          document.getElementById("output").innerHTML = "今日行うべきトレーニングは"+ training[r] + "です。";
+          document.getElementById("thnk").innerHTML = training[r];
         }
       </script>
 
