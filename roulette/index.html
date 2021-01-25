@@ -153,10 +153,30 @@
             console.log(training)
           }
           let r = Math.floor(Math.random() * training.length);
-          document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Arm.html" role="button" id="btn" style="height: 38px;"></a>';
-          document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
-          if (training[r]== '腕') {
-            document.getElementById("button").innerHTML = training[r] + '<a class="btn btn-block bgc-C tec-B" href="../Training/Arm.html" role="button" id="btn" style="height: 38px;"></a>';
+          document.getElementById("button").innerHTML = training[r];
+          if (training[r] == '腕') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Arm.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          }
+          if (training[r] == '肩') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Shoulder.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          }
+          if (training[r] == '胸') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Chest.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          }
+          if (training[r] == '腹筋') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Abs.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          }
+          if (training[r] == '背中') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Back.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          }
+          if (training[r] == '脚') {
+            document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Leg.html" role="button" id="btn" style="height: 38px;"></a>';
+            document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
           }
         }
       </script>
