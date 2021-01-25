@@ -84,33 +84,60 @@
     </div>
     <main class="container bgc-B">
       <div class="row">
-        <form id = "form1">
-          <select class="form-control form-control-lg" id="yest">
-            <option>腕</option>
-            <option>肩</option>
-            <option>胸</option>
-            <option>腹筋</option>
-            <option>背中</option>
-            <option>脚</option>
-          </select>
-        </form>
+        <div class="col-md-12 blog-main">
+          <h1 class="font-italic">
+            ルーレット
+          </h1>
+          <h4 class="pb-3 md-3 border-bottom">
+            Roulette
+          </h4>
+    
+          <div class="blog-post">
+            
+            <p>このルーレットページでは、今日どこの部位をトレーニングすればいいのか迷っているそこのあなたに、今日やるべきトレーニングをお教えします。</p>
+            <hr color="#eeeeee">
+            <div class="form-row">
+              <form id = "form1">
+                <select class="form-control form-control-lg" id="yest"　placeholder=".form-control-lg">
+                  <option>選択しない</option>
+                  <option>腕</option>
+                  <option>肩</option>
+                  <option>胸</option>
+                  <option>腹筋</option>
+                  <option>背中</option>
+                  <option>脚</option>
+                </select>
+              </form>
+            </div>
+            <div class="row">
+              <input type="button" onclick="func1()" value="送信">
+            </div>
+            <div id="output_message"></div>
+            <div id="output"></div>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <input type="button" onclick="func1()" value="送信">
-      </div>
-      <div id="output_message"></div>
-      <div id="output"></div>
+      
           
 
       <script language="javascript" type="text/javascript">
         function func1() {
-          let training = ['腕', '肩', '胸', '腹筋', '背中', '脚'];
+          let training = ['選択しない', '腕', '肩', '胸', '腹筋', '背中', '脚'];
           let yest = document.getElementById("yest").value;
           document.getElementById("output_message").innerHTML = "昨日行ったトレーニングは" + yest + "です。";
-          training.splice(training.indexOf(yest), 1);
-          console.log(yest);
-          console.log(training.indexOf(yest));
-          console.log(training)
+          if (yest == '選択しない') {
+            training.splice(0, 1);
+            console.log(yest);
+            console.log(training.indexOf(yest));
+            console.log(training)
+          }
+          else{
+            training.splice(0, 1);
+            training.splice(training.indexOf(yest), 1);
+            console.log(yest);
+            console.log(training.indexOf(yest));
+            console.log(training)
+          }
           let r = Math.floor(Math.random() * training.length);
           r = "今日行うべきトレーニングは"+ training[r] + "です。";
           document.getElementById("output").innerHTML = r;
