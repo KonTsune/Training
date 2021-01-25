@@ -21,7 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <nav class="navbar navbar-expand-lg bgc-A">
-      <a class="navbar-brand mb-0 h1 tec-D" href="../html-04/index.html">Training</a>
+      <a class="navbar-brand mb-0 h1 tec-D" href="../index.html">Training</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -33,25 +33,25 @@
               部位別トレーニング
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../html-04/Training/Arm.html">腕</a>
-              <a class="dropdown-item" href="../html-04/Training/Shoulder.html">肩</a>
-              <a class="dropdown-item" href="../html-04/Training/Chest.html">胸</a>
-              <a class="dropdown-item" href="../html-04/Training/Abs.html">腹</a>
-              <a class="dropdown-item" href="../html-04/Training/back.html">背</a>
-              <a class="dropdown-item" href="../html-04/Training/Leg.html">脚</a>
+              <a class="dropdown-item" href="../Training/Arm.html">腕</a>
+              <a class="dropdown-item" href="../Training/Shoulder.html">肩</a>
+              <a class="dropdown-item" href="../Training/Chest.html">胸</a>
+              <a class="dropdown-item" href="../Training/Abs.html">腹</a>
+              <a class="dropdown-item" href="../Training/back.html">背</a>
+              <a class="dropdown-item" href="../Training/Leg.html">脚</a>
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link tec-D" href="../html-04/Stretch/index.html">ストレッチ</a>
+            <a class="nav-link tec-D" href="../Stretch/index.html">ストレッチ</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link tec-D" href="../html-04/Diet/index.html">ダイエット</a>
+            <a class="nav-link tec-D" href="../Diet/index.html">ダイエット</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link tec-D" href="../html-04/Rest/index.html">休養</a>
+            <a class="nav-link tec-D" href="../Rest/index.html">休養</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link tec-D" href="../html-04/Roulette/index.html">ルーレット</a>
+            <a class="nav-link tec-D" href="../Roulette/index.html">ルーレット</a>
           </li>
         </ul>
       </div>
@@ -82,34 +82,41 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <main class="container">
-      <form id = "form1">
-        <select class="form-control" id="yest">
+    <main class="container bgc-B">
+      <div class="row">
+        <form id = "form1">
+          <select class="form-control form-control-lg" id="yest">
             <option>腕</option>
             <option>肩</option>
             <option>胸</option>
             <option>腹筋</option>
             <option>背中</option>
             <option>脚</option>
-        </select>
+          </select>
+        </form>
+      </div>
+      <div class="row">
         <input type="button" onclick="func1()" value="送信">
-        <div id="output_message"></div>
-        <div id="output"></div>
-        <script language="javascript" type="text/javascript">
-            function func1() {
-                let training = ['腕', '肩', '胸', '腹筋', '背中', '脚'];
-                let yest = document.getElementById("yest").value;
-                document.getElementById("output_message").innerHTML = "昨日行ったトレーニングは" + yest + "です。";
-                training.splice(training.indexOf(yest), 1);
-                console.log(yest);
-                console.log(training.indexOf(yest));
-                console.log(training)
-                let r = Math.floor(Math.random() * training.length);
-                r = "今日行うべきトレーニングは"+ training[r] + "です。";
-                document.getElementById("output").innerHTML = r;
-            }
-        </script>
-    </form>
+      </div>
+      <div id="output_message"></div>
+      <div id="output"></div>
+          
+
+      <script language="javascript" type="text/javascript">
+        function func1() {
+          let training = ['腕', '肩', '胸', '腹筋', '背中', '脚'];
+          let yest = document.getElementById("yest").value;
+          document.getElementById("output_message").innerHTML = "昨日行ったトレーニングは" + yest + "です。";
+          training.splice(training.indexOf(yest), 1);
+          console.log(yest);
+          console.log(training.indexOf(yest));
+          console.log(training)
+          let r = Math.floor(Math.random() * training.length);
+          r = "今日行うべきトレーニングは"+ training[r] + "です。";
+          document.getElementById("output").innerHTML = r;
+        }
+      </script>
+
     </main>
   </body>
 </html>
