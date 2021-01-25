@@ -123,11 +123,8 @@
                   <div class="col-md-5 bgc-B">
                     <div class="card-body">
                       <p>オススメの今日のトレーニング部位は</p>
-                      <h2 class="card-title tec-D" id="thnk"></h2>
-                      <div id="output"></div>
-                      <h5 class="card-title tec-D"></h5>
-                      <p class="card-text tec-D"></p>
-                      <a class="btn btn-block bgc-C tec-B" href="../html-04/Stretch/index.html" role="button">ストレッチについて知る</a>
+                      <h2 class="card-title tec-D" id="output"></h2>
+                      <div id="button"></div>
                     </div>
                   </div>
                   <div class="col-md-7 trim-r">
@@ -156,8 +153,11 @@
             console.log(training)
           }
           let r = Math.floor(Math.random() * training.length);
-          document.getElementById("output").innerHTML = "今日行うべきトレーニングは"+ training[r] + "です。";
-          document.getElementById("thnk").innerHTML = training[r];
+          document.getElementById("output").innerHTML = '<a class="btn btn-block bgc-C tec-B" href="../Training/Arm.html" role="button" id="btn" style="height: 38px;"></a>';
+          document.getElementById("btn").innerHTML = training[r] + "のトレーニングを見る";
+          if (training[r]== '腕') {
+            document.getElementById("button").innerHTML = training[r] + '<a class="btn btn-block bgc-C tec-B" href="../Training/Arm.html" role="button" id="btn" style="height: 38px;"></a>';
+          }
         }
       </script>
 
